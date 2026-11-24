@@ -11,6 +11,8 @@
   <a href="https://github.com/heyjeay/yappr-releases/releases/latest/download/Yappr.zip"><b>⬇ Download Yappr for Windows</b></a>
   &nbsp;·&nbsp;
   <a href="https://github.com/heyjeay/yappr-releases/releases/latest">What's new</a>
+  &nbsp;·&nbsp;
+  <a href="https://heyjeay.github.io/yappr-releases/">Website</a>
 </p>
 
 ---
