@@ -60,7 +60,7 @@ a { color: inherit; }
 .btn { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 600;
   border-radius: 999px; transition: transform .2s cubic-bezier(.34,1.4,.64,1), box-shadow .2s, background .2s; }
 .btn:active { transform: scale(.97); }
-.btn-primary { padding: 15px 28px; font-size: 16px; color: #061012;
+.btn-primary { padding: 15px 28px; font-size: 17px; color: #061012; font-family: var(--display); font-weight: 700; letter-spacing: .03em;
   background: linear-gradient(135deg, var(--cyan), var(--lime) 55%, var(--yellow));
   box-shadow: 0 10px 30px -8px rgba(0,245,212,.45), inset 0 1px 0 rgba(255,255,255,.5); }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 40px -10px rgba(130,247,76,.55), inset 0 1px 0 rgba(255,255,255,.5); }
@@ -142,6 +142,18 @@ h3 { font-size: 19px; margin: 0 0 6px; }
 .gallery figure { margin: 0; }
 .gallery figcaption { margin-top: 10px; font-size: 14px; color: var(--muted); }
 
+/* motion clips */
+.clips { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 44px; }
+.clip { margin: 0; }
+.clip .frame { aspect-ratio: 16 / 10; }
+.clip video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.clip figcaption { margin-top: 14px; }
+.clip figcaption b { display: block; font-size: 16px; color: var(--text); margin-bottom: 2px; }
+.clip figcaption span { font-size: 14px; color: var(--text-2); }
+kbd { font-family: var(--body); font-size: 12px; padding: 2px 6px; border-radius: 6px; background: rgba(255,255,255,.08);
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.4), 0 0 0 1px var(--line); color: var(--text); }
+@media (max-width: 860px) { .clips { grid-template-columns: 1fr; } }
+
 /* steps */
 .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 44px; counter-reset: step; }
 .step { position: relative; padding: 26px 22px 22px; border-radius: var(--radius); background: var(--glass);
@@ -192,6 +204,7 @@ footer a { color: var(--text-2); text-decoration: none; } footer a:hover { color
     <div class="nav-links">
       <a href="#features">Features</a>
       <a href="#teams">Teams</a>
+      <a href="#motion">In motion</a>
       <a href="#start">Get started</a>
       <a href="https://github.com/heyjeay/yappr-releases/releases">Releases</a>
     </div>
@@ -261,6 +274,16 @@ footer a { color: var(--text-2); text-decoration: none; } footer a:hover { color
 
       <div class="row flip">
         <div class="text reveal">
+          <div class="eyebrow">Squad up</div>
+          <h2>Rally the squad</h2>
+          <p>Bots that post LFG calls with an "I'm in" button, tournament sign-ups with roles to pick, clips that play right in the chat, and reactions for every clutch.</p>
+          <ul class="ticks"><li>Buttons and menus from bots</li><li>Videos play in place, no download first</li><li>Replies, forwards and pins</li></ul>
+        </div>
+        <div class="media reveal"><div class="frame"><img src="assets/site/lfg-1200.webp" srcset="assets/site/lfg-800.webp 800w, assets/site/lfg-1200.webp 1200w, assets/site/lfg.webp 1600w" sizes="(max-width: 860px) 100vw, 640px" decoding="async" alt="An LFG bot's squad call and a Friday Night Cup sign-up card in chat" loading="lazy" width="1600" height="992"></div></div>
+      </div>
+
+      <div class="row">
+        <div class="text reveal">
           <div class="eyebrow">Voice &amp; screen share</div>
           <h2>Go Live together</h2>
           <p>Jump into a voice channel and talk. Share your screen or a single game window, watch several streams side by side, or pop one out into its own window.</p>
@@ -269,7 +292,7 @@ footer a { color: var(--text-2); text-decoration: none; } footer a:hover { color
         <div class="media reveal"><div class="frame"><img src="assets/site/streams-1200.webp" srcset="assets/site/streams-800.webp 800w, assets/site/streams-1200.webp 1200w, assets/site/streams.webp 1600w" sizes="(max-width: 860px) 100vw, 640px" decoding="async" alt="Two people sharing their screens in a voice channel" loading="lazy" width="1600" height="992"></div></div>
       </div>
 
-      <div class="row">
+      <div class="row flip">
         <div class="text reveal">
           <div class="eyebrow">Themes</div>
           <h2>Glass, your way</h2>
@@ -283,6 +306,30 @@ footer a { color: var(--text-2); text-decoration: none; } footer a:hover { color
         <figure class="reveal"><div class="frame"><img src="assets/site/emojis-1200.webp" srcset="assets/site/emojis-800.webp 800w, assets/site/emojis-1200.webp 1200w, assets/site/emojis.webp 1600w" sizes="(max-width: 860px) 100vw, 380px" decoding="async" alt="The emoji picker" loading="lazy" width="1600" height="992"></div><figcaption>Emoji and GIFs, a click away</figcaption></figure>
         <figure class="reveal"><div class="frame"><img src="assets/site/me-1200.webp" srcset="assets/site/me-800.webp 800w, assets/site/me-1200.webp 1200w, assets/site/me.webp 1600w" sizes="(max-width: 860px) 100vw, 380px" decoding="async" alt="A profile card" loading="lazy" width="1600" height="992"></div><figcaption>Profiles with your picture, banner and status</figcaption></figure>
         <figure class="reveal"><div class="frame"><img src="assets/site/switcher-1200.webp" srcset="assets/site/switcher-800.webp 800w, assets/site/switcher-1200.webp 1200w, assets/site/switcher.webp 1600w" sizes="(max-width: 860px) 100vw, 380px" decoding="async" alt="The quick switcher" loading="lazy" width="1600" height="992"></div><figcaption>Ctrl+K to jump anywhere</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="motion" style="padding-top:40px">
+    <div class="wrap">
+      <div class="center reveal">
+        <div class="eyebrow">See it move</div>
+        <h2>Fits however you play</h2>
+        <p class="sub">Shrink it beside your game, stretch it across a second screen, or give it a whole new look in a click.</p>
+      </div>
+      <div class="clips">
+        <figure class="clip reveal">
+          <div class="frame"><video src="assets/site/clip-mini.mp4" poster="assets/site/clip-mini.webp" muted loop playsinline preload="none" aria-label="Mini mode: the window shrinks to just the conversation and back"></video></div>
+          <figcaption><b>Mini mode</b><span>Press <kbd>Alt</kbd> + <kbd>Space</kbd> and Yappr shrinks to just the conversation, so it sits beside your game.</span></figcaption>
+        </figure>
+        <figure class="clip reveal">
+          <div class="frame"><video src="assets/site/clip-resize.mp4" poster="assets/site/clip-resize.webp" muted loop playsinline preload="none" aria-label="Resizing: panels fold away as the window narrows"></video></div>
+          <figcaption><b>Any size</b><span>Panels fold away as the window narrows and come back as it grows.</span></figcaption>
+        </figure>
+        <figure class="clip reveal">
+          <div class="frame"><video src="assets/site/clip-themes.mp4" poster="assets/site/clip-themes.webp" muted loop playsinline preload="none" aria-label="Switching between themes"></video></div>
+          <figcaption><b>Themes in a click</b><span>Dracula, Nord, Gruvbox, OLED black and more, live as you pick them.</span></figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -363,6 +410,15 @@ if (!reduce && 'IntersectionObserver' in window) {
     if (r.top > innerHeight) { el.classList.add('pending'); io.observe(el); }
   });
 }
+
+// ---- motion clips: play while on screen ----------------------------------------------------
+document.querySelectorAll('.clip video').forEach(video => {
+  if (reduce) { video.controls = true; return; }
+  if (!('IntersectionObserver' in window)) { video.autoplay = true; video.preload = 'auto'; return; }
+  new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) { video.preload = 'auto'; video.play().catch(() => {}); } else { video.pause(); }
+  }, { threshold: .35 }).observe(video);
+});
 
 // ---- the pixel ripple (hero background) --------------------------------------------------
 // Rings of pixels spread from every click or drag and fade out; a light rain keeps it
