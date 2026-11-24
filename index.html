@@ -177,6 +177,8 @@ kbd { font-family: var(--body); font-size: 12px; padding: 2px 6px; border-radius
 footer { padding: 48px 0 calc(48px + env(safe-area-inset-bottom, 0px)); color: var(--muted); font-size: 14px; }
 footer .wrap { display: flex; flex-wrap: wrap; gap: 16px 28px; justify-content: space-between; align-items: center; }
 footer a { color: var(--text-2); text-decoration: none; } footer a:hover { color: var(--text); }
+footer .credits { flex-basis: 100%; order: 3; font-size: 12.5px; color: #5b6870; }
+footer .credits a { color: #7d8b94; text-decoration: underline; text-underline-offset: 2px; }
 
 /* reveal on scroll (content is visible without it) */
 .reveal { transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
@@ -376,6 +378,7 @@ footer a { color: var(--text-2); text-decoration: none; } footer a:hover { color
 <footer>
   <div class="wrap">
     <span>© Yappr</span>
+    <span class="credits">Gameplay in the screenshots: <a href="https://commons.wikimedia.org/wiki/File:Xonotic_0-8-2_gameplay.webm">Xonotic</a> by Drummyfish (GPLv3) and <a href="https://commons.wikimedia.org/wiki/File:Benchmark_SuperTux_Kart_Base_Profile_2025.07.04_-_10.19.10.02.webm">SuperTuxKart</a> by the SuperTuxKart authors (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>), trimmed and resized; avatars are original.</span>
     <span><a href="https://github.com/heyjeay/yappr-releases/releases">All releases</a> &nbsp;·&nbsp; <a href="#start">Get started</a> &nbsp;·&nbsp; <a href="#top">Back to top</a></span>
   </div>
 </footer>
