@@ -143,16 +143,17 @@ h3 { font-size: 19px; margin: 0 0 6px; }
 .gallery figcaption { margin-top: 10px; font-size: 14px; color: var(--muted); }
 
 /* motion clips */
-.clips { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 44px; }
-.clip { margin: 0; }
+.clips { display: grid; gap: 56px; margin-top: 52px; }
+.clip { margin: 0; display: grid; grid-template-columns: minmax(0, 2.1fr) minmax(0, 1fr); gap: 44px; align-items: center; }
+.clip.flip { grid-template-columns: minmax(0, 1fr) minmax(0, 2.1fr); }
+.clip.flip .frame { order: 2; }
 .clip .frame { aspect-ratio: 16 / 10; }
 .clip video { width: 100%; height: 100%; object-fit: cover; display: block; }
-.clip figcaption { margin-top: 14px; }
-.clip figcaption b { display: block; font-size: 16px; color: var(--text); margin-bottom: 2px; }
-.clip figcaption span { font-size: 14px; color: var(--text-2); }
+.clip figcaption b { display: block; font-family: var(--display); font-size: 26px; color: var(--text); margin-bottom: 8px; }
+.clip figcaption span { font-size: 16.5px; color: var(--text-2); }
 kbd { font-family: var(--body); font-size: 12px; padding: 2px 6px; border-radius: 6px; background: rgba(255,255,255,.08);
   box-shadow: inset 0 -1px 0 rgba(0,0,0,.4), 0 0 0 1px var(--line); color: var(--text); }
-@media (max-width: 860px) { .clips { grid-template-columns: 1fr; } }
+@media (max-width: 860px) { .clip, .clip.flip { grid-template-columns: 1fr; gap: 18px; } .clip.flip .frame { order: 0; } }
 
 /* steps */
 .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 44px; counter-reset: step; }
@@ -295,7 +296,7 @@ footer a { color: var(--text-2); text-decoration: none; } footer a:hover { color
       <div class="row flip">
         <div class="text reveal">
           <div class="eyebrow">Themes</div>
-          <h2>Glass, your way</h2>
+          <h2>Your way</h2>
           <p>See-through panels, soft light and a material that lights up under your cursor. Pick from 22 themes, from frosted glass to pure OLED black.</p>
           <ul class="ticks"><li>Adjust how much glass you want</li><li>Your choice of font and motion</li></ul>
         </div>
@@ -322,7 +323,7 @@ footer a { color: var(--text-2); text-decoration: none; } footer a:hover { color
           <div class="frame"><video src="assets/site/clip-mini.mp4" poster="assets/site/clip-mini.webp" muted loop playsinline preload="none" aria-label="Mini mode: the window shrinks to just the conversation and back"></video></div>
           <figcaption><b>Mini mode</b><span>Press <kbd>Alt</kbd> + <kbd>Space</kbd> and Yappr shrinks to just the conversation, so it sits beside your game.</span></figcaption>
         </figure>
-        <figure class="clip reveal">
+        <figure class="clip flip reveal">
           <div class="frame"><video src="assets/site/clip-resize.mp4" poster="assets/site/clip-resize.webp" muted loop playsinline preload="none" aria-label="Resizing: panels fold away as the window narrows"></video></div>
           <figcaption><b>Any size</b><span>Panels fold away as the window narrows and come back as it grows.</span></figcaption>
         </figure>
